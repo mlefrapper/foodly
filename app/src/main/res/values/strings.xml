@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Foodly</string>
+    <string name="bottom_bar_item_search">Recherche</string>
+    <string name="bottom_bar_item_history">Historique</string>
+    <string name="bottom_bar_item_scan">Scan</string>
+    <string name="bottom_bar_item_recommendations">Recos</string>
+    <string name="bottom_bar_item_profile">Profil</string>
 </resources>
