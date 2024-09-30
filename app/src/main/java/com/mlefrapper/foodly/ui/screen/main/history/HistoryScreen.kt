@@ -1,4 +1,4 @@
-package com.mlefrapper.foodly.screens
+package com.mlefrapper.foodly.ui.screen.main.history
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -8,11 +8,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 
 @Composable
-fun ScanScreen() {
+fun HistoryScreen() {
     Box(
         modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center
+        contentAlignment = Alignment.Center,
     ) {
-        Text("Scan")
+        Text("Historique")
     }
 }

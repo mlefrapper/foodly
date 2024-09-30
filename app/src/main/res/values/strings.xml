@@ -5,4 +5,9 @@
     <string name="bottom_bar_item_scan">Scan</string>
     <string name="bottom_bar_item_recommendations">Recos</string>
     <string name="bottom_bar_item_profile">Profil</string>
+
+    <string name="search_bar_hint">Rechercher…</string>
+    <string name="search_bar_search_content_description">Rechercher</string>
+    <string name="search_bar_clear">Effacer</string>
+    <string name="no_results_found">Aucun résultat trouvé</string>
 </resources>

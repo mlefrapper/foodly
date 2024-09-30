@@ -1,10 +1,9 @@
-package com.mlefrapper.foodly.screens
+package com.mlefrapper.foodly.ui.screen.splash
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.defaultMinSize
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.size
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -20,8 +19,6 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.airbnb.lottie.compose.LottieAnimation
 import com.airbnb.lottie.compose.LottieCompositionSpec
-import com.airbnb.lottie.compose.LottieConstants
-import com.airbnb.lottie.compose.animateLottieCompositionAsState
 import com.airbnb.lottie.compose.rememberLottieComposition
 import com.mlefrapper.foodly.R
 import com.mlefrapper.foodly.ui.theme.FoodlyTheme
@@ -40,28 +37,16 @@ fun SplashScreen(navController: NavController) {
             modifier = Modifier
                 .fillMaxSize()
                 .background(Color.White),
-            contentAlignment = Alignment.Center
+            contentAlignment = Alignment.Center,
         ) {
             val composition by rememberLottieComposition(
-                LottieCompositionSpec.RawRes(
-                    R.raw.heart
-                )
+                LottieCompositionSpec.RawRes(R.raw.splash),
             )
-
-            val preloaderProgress by animateLottieCompositionAsState(
-                composition,
-                iterations = LottieConstants.IterateForever,
-                isPlaying = true
-            )
-
 
             LottieAnimation(
-                composition = composition,
-                progress = {
-                    preloaderProgress
-                },
-                modifier = Modifier.size(200.dp)
-                    .align(Alignment.Center)
+                composition,
+                modifier = Modifier.defaultMinSize(300.dp),
+                iterations = 1,
             )
         }
     } else {
