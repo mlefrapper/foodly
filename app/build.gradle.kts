@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.compose.compiler)
     kotlin("plugin.serialization") version "1.8.22"
     id("kotlin-kapt")
     id("com.google.dagger.hilt.android")
@@ -79,6 +80,9 @@ dependencies {
     // Retrofit
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
+
+    // Logging
+    implementation(libs.logging.interceptor)
 
     // Coroutines
     implementation(libs.kotlinx.coroutines.android)

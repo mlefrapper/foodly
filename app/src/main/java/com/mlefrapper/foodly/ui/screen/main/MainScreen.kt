@@ -35,6 +35,7 @@ import com.mlefrapper.foodly.ui.screen.main.history.HistoryScreen
 import com.mlefrapper.foodly.ui.screen.main.profile.ProfileScreen
 import com.mlefrapper.foodly.ui.screen.main.recommendations.RecosScreen
 import com.mlefrapper.foodly.ui.screen.main.scan.ScanScreen
+import com.mlefrapper.foodly.ui.screen.main.search.ISearchViewModel
 import com.mlefrapper.foodly.ui.screen.main.search.SearchScreen
 import com.mlefrapper.foodly.ui.shapes.CustomRoundedShape
 import com.mlefrapper.foodly.ui.theme.Gray
@@ -43,7 +44,9 @@ import com.mlefrapper.foodly.ui.theme.Orange
 import com.mlefrapper.foodly.ui.theme.White
 
 @Composable
-fun MainScreen() {
+fun MainScreen(
+    searchViewModel: ISearchViewModel,
+) {
     val navController = rememberNavController()
     val context = LocalContext.current
     var selectedItem by remember { mutableIntStateOf(0) }
@@ -133,14 +136,19 @@ fun MainScreen() {
             modifier = Modifier
                 .padding(innerPadding)
                 .navigationBarsPadding(),
+            searchViewModel = searchViewModel,
         )
     }
 }
 
 @Composable
-fun Navigation(navController: androidx.navigation.NavHostController, modifier: Modifier = Modifier) {
+fun Navigation(
+    navController: androidx.navigation.NavHostController,
+    modifier: Modifier = Modifier,
+    searchViewModel: ISearchViewModel,
+) {
     NavHost(navController = navController, startDestination = "Search", modifier = modifier) {
-        composable("Search") { SearchScreen() }
+        composable("Search") { SearchScreen(viewModel = searchViewModel) }
         composable("History") { HistoryScreen() }
         composable("Scan") { ScanScreen() }
         composable("Recommendations") { RecosScreen() }

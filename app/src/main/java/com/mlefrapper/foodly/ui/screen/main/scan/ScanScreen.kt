@@ -26,8 +26,6 @@ import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.google.mlkit.vision.barcode.BarcodeScanning
 import com.google.mlkit.vision.common.InputImage
-import com.mlefrapper.foodly.data.model.ProductDto
-import com.mlefrapper.foodly.data.repository.product.IProductRepository
 import com.mlefrapper.foodly.ui.theme.FoodlyTheme
 import timber.log.Timber
 
@@ -116,16 +114,6 @@ fun ScanScreen(viewModel: ScanViewModel = viewModel()) {
             Text("Scan Barcode")
         }
         Text("Scanned Code: $scannedCode")
-    }
-}
-
-class FakeProductRepository : IProductRepository {
-    override suspend fun getProduct(barcode: String): ProductDto {
-        return ProductDto(
-            productName = "Mock Product",
-            ingredientsText = null,
-            nutriments = null,
-        )
     }
 }
 

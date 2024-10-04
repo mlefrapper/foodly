@@ -15,7 +15,7 @@ class FoodlyApplication : Application() {
 
     private fun setupTimber() {
         Timber.plant(
-            if (BuildConfig.DEBUG) Timber.DebugTree() else ReleaseTimberTree()
+            if (BuildConfig.DEBUG) Timber.DebugTree() else ReleaseTimberTree(),
         )
     }
 }
